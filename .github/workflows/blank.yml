@@ -1,0 +1,27 @@
+name: Deno 🐉
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - uses: actions/github-script@0.4.0
+      with:
+        github-token: ${{ github.token }}
+        script: |
+          const releases = github.repos.listReleases({
+            denoland,
+            deno
+          })
+          const tags = releases.map(x => x.tag_name)
+          console.log(tags)
+    
+    - uses: denolib/setup-deno@master
+      with:
+        deno-version: 0.x
+    - run: deno run https://deno.land/std/examples/welcome.ts
