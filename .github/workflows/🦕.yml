@@ -25,7 +25,7 @@ jobs:
           console.log('Deno Releases:')
           console.log(tags)
     
-    - uses: joshmgross/setup-deno@master
+    - uses: joshmgross/setup-deno@a743c91c77f443a36ad78018d2da4c18cec43511
       with:
         deno-version: ${{ matrix.deno-version }}
     - run: deno --version
