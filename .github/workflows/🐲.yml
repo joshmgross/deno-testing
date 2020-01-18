@@ -15,8 +15,8 @@ jobs:
         github-token: ${{ github.token }}
         script: |
           const releases = github.repos.listReleases({
-            denoland,
-            deno
+            "denoland",
+            "deno"
           })
           const tags = releases.map(x => x.tag_name)
           console.log(tags)
