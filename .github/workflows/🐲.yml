@@ -18,6 +18,7 @@ jobs:
             owner: 'denoland',
             repo: 'deno'
           })
+          console.log(releases)
           const tags = releases.map(x => x.tag_name)
           console.log(tags)
     
