@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        deno-version: [0.x, 0.30.x, 0.1]
+        deno-version: [0.x, 0.30.x, 0.1, 0.1.x]
 
     steps:
     - uses: actions/checkout@v2
