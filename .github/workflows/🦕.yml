@@ -28,6 +28,4 @@ jobs:
     - uses: joshmgross/setup-deno@master
       with:
         deno-version: ${{ matrix.deno-version }}
-    - run: |
-        deno --version
-        deno run https://deno.land/std/examples/welcome.ts
+    - run: deno --version
