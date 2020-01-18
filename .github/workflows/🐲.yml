@@ -18,8 +18,8 @@ jobs:
             owner: 'denoland',
             repo: 'deno'
           })).data
-          console.log(releases)
           const tags = releases.map(x => x.tag_name)
+          console.log('Deno Releases:')
           console.log(tags)
     
     - uses: denolib/setup-deno@master
