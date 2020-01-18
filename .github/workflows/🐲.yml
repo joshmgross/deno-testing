@@ -14,10 +14,10 @@ jobs:
       with:
         github-token: ${{ github.token }}
         script: |
-          const releases = await github.repos.listReleases({
+          const releases = (await github.repos.listReleases({
             owner: 'denoland',
             repo: 'deno'
-          })
+          })).data
           console.log(releases)
           const tags = releases.map(x => x.tag_name)
           console.log(tags)
