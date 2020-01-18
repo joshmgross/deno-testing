@@ -6,6 +6,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        deno-version: [0.x, 0.30.x, 0.1]
 
     steps:
     - uses: actions/checkout@v2
@@ -22,7 +25,9 @@ jobs:
           console.log('Deno Releases:')
           console.log(tags)
     
-    - uses: denolib/setup-deno@master
+    - uses: joshmgross/setup-deno@master
       with:
         deno-version: 0.x
-    - run: deno run https://deno.land/std/examples/welcome.ts
+    - run: |
+        deno --version
+        deno run https://deno.land/std/examples/welcome.ts
